@@ -272,6 +272,10 @@ span {
   padding-bottom: 36% !important;
 }
 
+.pogoSlider-slide {
+  background-position: center;
+}
+
 .pogoSlider-dir-btn--next {
   right: 0;
 }

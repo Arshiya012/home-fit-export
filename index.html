@@ -9,7 +9,6 @@
   <!-- Site Icons -->
   <link rel="shortcut icon" href="images/FAVICON.png" />
   <!-- Bootstrap -->
-  <link href="css/bootstrap.css" rel="stylesheet" />
   <link href="css/font-awesome.css" rel="stylesheet" />
   <!-- Pogo Slider -->
   <link rel="stylesheet" href="css/pogo-slider.min.css" />
@@ -32,42 +31,94 @@
 
 <body>
 
-<header>
-  <div class="relative bg-w-1">
+  <header id="mainHeader">
+    <div id="home" class="relative bg-w-1">
 
-    <div class="absolute top-0 right-0 w-[50vw] xl:w-[70vw] md:w-full ">
-      <img class="!h-[39px] md:hidden " src="images/top-bg.png" alt="Top Curve" />
-      <div class="md:bg-p-2 md:h-[39px]">
-      <div class="header-top-strip">
-        <div class="flex items-center gap-2 text-white">
-          <i class="fa fa-envelope w-7 h-7 bg-s-1 rounded-full flex items-center justify-center text-xs"></i>
-          info@homefitexports
+      <div class="absolute top-0 right-0 w-[50vw] xl:w-[70vw] md:w-full ">
+        <img class="!h-[39px] md:hidden " src="images/top-bg.png" alt="Top Curve" />
+        <div class="md:bg-p-2 md:h-[39px]">
+          <div class="header-top-strip">
+            <div class="flex items-center gap-2 text-white">
+              <i class="fa fa-envelope w-7 h-7 bg-s-1 rounded-full flex items-center justify-center text-xs"></i>
+              info@homefitexports
+            </div>
+            <div class="flex items-center gap-2 text-white">
+              <i class="fa fa-phone w-7 h-7 bg-s-1 rounded-full flex items-center justify-center text-xs"></i>
+              +0123 4567 891
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2 text-white">
-          <i class="fa fa-phone w-7 h-7 bg-s-1 rounded-full flex items-center justify-center text-xs"></i>
-          +0123 4567 891
+      </div>
+
+      <div class="header-container">
+        <div class="lg:flex lg:items-center lg:justify-between lg:w-full lg:gap-x-20">
+          <img src="images/logo.png" alt="HomeFit Logo" class="md:w-[130px] sm:w-[100px]">
+          <button onclick="toggleMenu()" class="hidden lg:block">
+            <i class="fa fa-bars text-p-2 text-md cursor-pointer"></i>
+          </button>
         </div>
+
+        <nav
+          class=" lg:hidden header-nav flex flex-wrap items-center justify-end gap-6 xl:gap-5 lg:gap-4 md:gap-3 sm:gap-2 lg:justify-center md:justify-center">
+          <a href="home" class="header-nav-link">Home</a>
+          <a href="#product" class="header-nav-link">Our Products</a>
+          <a href="#about" class="header-nav-link">About Us</a>
+          <a href="#services" class="header-nav-link">Services</a>
+          <a href="#gallery" class="header-nav-link">Our Gallery</a>
+          <a href="#contact" class="btn-p md:!mt-0 lg:mt-2 sm:mt-2">Contact Us</a>
+        </nav>
       </div>
-      </div>
+
     </div>
+  </header>
 
-    <div class="header-container">
-      <div class="">
-        <img src="images/logo.png" alt="HomeFit Logo" class="md:w-[130px] sm:w-[100px]">
-      </div>
+  <!-- MOBILE SIDEBAR -->
+  <div id="mobileMenu" class="hidden lg:block fixed top-0 right-0 h-full w-72 bg-p-2 text-white
+           transform translate-x-full transition-transform duration-300 z-50">
+    <!-- Close Button -->
+    <button onclick="toggleMenu()" class="absolute top-4 right-4 text-sm cursor-pointer">
+      <i class="fa fa-times text-w-1" aria-hidden="true"></i>
+    </button>
 
-      <nav class="header-nav flex flex-wrap items-center justify-end gap-6 xl:gap-5 lg:gap-4 md:gap-3 sm:gap-2 lg:justify-center md:justify-center">
-        <a href="#" class="header-nav-link">Home</a>
-        <a href="#" class="header-nav-link">Our Products</a>
-        <a href="#" class="header-nav-link">About Us</a>
-        <a href="#" class="header-nav-link">Services</a>
-        <a href="#" class="header-nav-link">Our Gallery</a>
-        <a href="#" class="btn-p md:!mt-0 lg:mt-2 md:mt-2 sm:mt-2">Contact Us</a>
-      </nav>
-    </div>
+    <ul class="flex flex-col gap-2 mt-20 px-6 text-sm">
+      <li>
+        <a href="#home" class="block px-4 py-3 hover:bg-[#9bd6db] rounded-md transition">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="block px-4 py-3 hover:bg-[#9bd6db] rounded-md transition">
+          About
+        </a>
+      </li>
+      <li>
+        <a href="#academic" class="block px-4 py-3 hover:bg-[#9bd6db] rounded-md transition">
+          Academics
+        </a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-3 hover:bg-[#9bd6db] rounded-md transition">
+          Admissions
+        </a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-3 hover:bg-[#9bd6db] rounded-md transition">
+          Facilities
+        </a>
+      </li>
+      <li>
+        <a href="#gallery" class="block px-4 py-3 hover:bg-[#9bd6db] rounded-md transition">
+          Gallery
+        </a>
+      </li>
 
+      <li>
+        <a href="#" class="block text-center bg-p-1 py-3 rounded-md">
+          Contact Us
+        </a>
+      </li>
+    </ul>
   </div>
-</header>
 
 
   <!-- Banner Section  -->
@@ -80,7 +131,7 @@
         </div>
 
         <h1 class="mt-3 !text-w-1 font-bold block !mb-0 !-leading-[1.2] xl:text-xl lg:text-lg >
-          Deals in <span class="text-s-1">Locks</span> & <br /> Hardware
+          Deals in <span class=" text-s-1">Locks</span> & <br /> Hardware
         </h1>
 
         <h4 class="mt-3 max-w-3xl text-w-1 xl:text-md lg:text-md md:text-sm sm:text-xs">
@@ -100,7 +151,9 @@
     </div>
 
 
-    <div class="pogoSlider wow bounceIn min-h-[560px] xl:min-h-[520px] lg:min-h-[450px] md:min-h-[400px] sm:min-h-[320px]" id="js-main-slider" data-wow-duration="1.5s" data-wow-delay="0.3s">
+    <div
+      class="pogoSlider wow bounceIn min-h-[560px] xl:min-h-[520px] lg:min-h-[450px] md:min-h-[400px] sm:min-h-[320px]"
+      id="js-main-slider" data-wow-duration="1.5s" data-wow-delay="0.3s">
       <!-- Slide1 -->
       <div class="pogoSlider-slide" data-transition="slideOverLeft" data-duration=""
         style="background-image: url(images/banner-img.jpg)"></div>
@@ -123,7 +176,7 @@
 
   <!-- About Us Section  -->
 
-  <section class="container my-sec">
+  <section id="about" class="container my-sec">
     <div class="grid grid-cols-2 lg:grid-cols-1 gap-14 lg:gap-10 md:gap-8 sm:gap-6 items-center">
 
       <div>
@@ -192,12 +245,12 @@
           </div>
           <div>
             <h5 class="font-bold mb-1">
-            <h5 class="font-bold mb-1">
-              Global Exports
-            </h5>
-            <p class="text-gray-600 text-sm">
-              Serving clients across 40+ countries worldwide
-            </p>
+              <h5 class="font-bold mb-1">
+                Global Exports
+              </h5>
+              <p class="text-gray-600 text-sm">
+                Serving clients across 40+ countries worldwide
+              </p>
           </div>
         </div>
 
@@ -211,7 +264,7 @@
 
 
   <!-- Services Section -->
-  <section class="bg-g-1">
+  <section id="services" class="bg-g-1">
     <div class="container pt-[80px] xl:pt-[70px] md:pt-[40px]">
       <div class="text-center mb-14">
         <div class="btn-w mb-4">
@@ -293,7 +346,7 @@
 
 
     <!-- Product Section  -->
-    <div class="container my-sec">
+    <div id="product" class="container my-sec">
       <div class="text-center mb-14">
         <div class="btn-w mb-4">
           Export Quality
@@ -414,7 +467,7 @@
 
 
   <!-- Gallery Section  -->
-  <section class="container my-sec">
+  <section id="gallery" class="container my-sec">
     <div class="text-center mb-14">
       <div class="btn-w mb-4">
         Gallery
@@ -491,11 +544,11 @@
         <div class="footer-menu-heading justify-self-center lg:justify-self-start sm:justify-self-center">
           <h3>Quick Links</h3>
           <ul class="footer-menu-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Our Product</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#product">Our Product</a></li>
             <li><a href="#">Testimonials</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
 
@@ -519,7 +572,8 @@
               <i class="mt-1 w-5 flex-none fa fa-phone text-xs sm:hidden"></i>
               <div class="social-text mb-0">
                 <p class="mb-0 text-w-1"><a href="tel:+0123 456 789">
-                    <i class="mt-1 w-5 flex-none fa fa-phone text-xs hidden sm:!inline md:text-[12px] mr-2"></i>0123 456 789</a></p>
+                    <i class="mt-1 w-5 flex-none fa fa-phone text-xs hidden sm:!inline md:text-[12px] mr-2"></i>0123 456
+                    789</a></p>
               </div>
             </div>
 
@@ -551,6 +605,14 @@
 
   <!-- Js -->
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+
+  <!-- JS -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("translate-x-full");
+    }
+  </script>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
